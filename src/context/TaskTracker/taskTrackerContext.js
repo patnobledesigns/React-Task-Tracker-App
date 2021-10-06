@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const TaskTrackerContext = createContext();
+const taskTrackerContext = createContext();
 
-export default TaskTrackerContext;
+export default taskTrackerContext;

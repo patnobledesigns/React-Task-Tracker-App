@@ -5,12 +5,16 @@ import TaskTrackerContext from "../context/TaskTracker/taskTrackerContext";
 const Tasks = () => {
   const taskTrackerContext = useContext(TaskTrackerContext);
 
-  const { tasks } = taskTrackerContext;
+  const { tasks, loading } = taskTrackerContext;
   return (
     <Fragment>
-      {tasks.length > 0
-        ? tasks.map((task) => <Task key={task.id} task={task} />)
-        : "No Task To Show"}
+      {loading ? (
+        <h3>{"Loading tasks..."}</h3>
+      ) : tasks.length > 0 ? (
+        tasks.map((task) => <Task key={task.id} task={task} />)
+      ) : (
+        "No Task To Show"
+      )}
     </Fragment>
   );
 };
