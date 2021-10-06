@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import About from "./components/About";
 import AddTask from "./components/AddTask";
@@ -19,8 +19,16 @@ function App() {
         <div className="container">
           <Header onAdd={addTaskButton} showButtonTxt={showAddTask} />
           {showAddTask && <AddTask addTaskButton={addTaskButton} />}
-          <Tasks />
           <Switch>
+            <Route
+              path="/"
+              exact
+              render={(props) => (
+                <Fragment>
+                  <Tasks />
+                </Fragment>
+              )}
+            />
             <Route path="/about" component={About} />
           </Switch>
           <Footer />
