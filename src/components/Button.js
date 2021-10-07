@@ -8,7 +8,7 @@ const Button = (props) => {
       onClick={props.onclick}
       className="btn"
     >
-      {props.showButtonTxt ? "Close" : "Add"}
+      {props.text}
     </button>
   );
 };

@@ -17,7 +17,7 @@ function App() {
     <Router>
       <TaskTrackerState>
         <div className="container">
-          <Header onAdd={addTaskButton} showButtonTxt={showAddTask} />
+          <Header onAdd={addTaskButton} showAdd={showAddTask} />
           {showAddTask && <AddTask addTaskButton={addTaskButton} />}
           <Switch>
             <Route

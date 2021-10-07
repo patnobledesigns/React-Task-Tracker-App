@@ -7,14 +7,16 @@ const Header = (props) => {
   const onclick = () => {
     props.onAdd();
   };
+
   const location = useLocation();
   return (
     <header className="header">
       <h1>{props.title}</h1>
       {location.pathname === "/" && (
         <Button
-          color="green"
-          showButtonTxt={props.showButtonTxt}
+          color={props.showAdd ? "red" : "green"}
+          text={props.showAdd ? "Close" : "Add"}
+          
           onclick={onclick}
         />
       )}
